@@ -3,6 +3,7 @@ package org.launchcode.techjobs.console;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Map;
 
 /**
  * Created by LaunchCode
@@ -110,7 +111,17 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+    //loop over some jobs
+        for(int i = 0; i < someJobs.size(); i++){
 
-        System.out.println("printJobs is not implemented yet");
+            Map<String, String> currentMap = someJobs.get(i);
+            System.out.println("*****");
+            // Now we can use currentMap as we would any other map
+            for (Map.Entry<String, String> x : currentMap.entrySet()) {
+                System.out.println(x.getKey() + " : " + x.getValue());
+            }
+
+        }
+        //loop over the key value pairs of each job in someJobs
     }
 }
