@@ -85,11 +85,14 @@ public class JobData {
         return jobs;
     }
     public static ArrayList<HashMap<String, String>> findByValue(String value){
-
+        //calls method loadData()
         loadData();
-
+        //Declares a AnnrayList of HashMaps names jobs and Initilizaizes it
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-
+        /* This is a nested for loop. The first for loop goes throught he ArrayList, the second looks at key value pairs
+        stored as a HashMap inside the Arraylist. It's Checking all the values to see if they match the value we are
+        looking for (ignoring the case). If it finds the value, it breaks the loop.
+         */
         for (HashMap<String, String> row : allJobs) {
             for (String key : row.keySet()) {
                 String aValue = row.get(key);
